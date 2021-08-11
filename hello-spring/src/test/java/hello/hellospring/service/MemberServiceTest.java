@@ -17,8 +17,9 @@ public class MemberServiceTest {
 	MemberService memberService;
 	MemoryMemberRepository memberRepository;
 
-	@BeforeEach
+	@BeforeEach //동작하기 전 실행
 	public void beforeEach() {
+		//새로운 객체가 아닌 기존 객체를 활용하기 위해 
 		memberRepository = new MemoryMemberRepository();
 		memberService = new MemberService(memberRepository);
 	}
