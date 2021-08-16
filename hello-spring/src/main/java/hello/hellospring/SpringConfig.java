@@ -1,5 +1,6 @@
 package hello.hellospring;
 
+import hello.hellospring.aop.TimeTraceAop;
 import hello.hellospring.repository.JdbcMemberRepository;
 import hello.hellospring.repository.JdbcTemplateMemberRepository;
 import hello.hellospring.repository.JpaMemberRepository;
@@ -54,5 +55,11 @@ public class SpringConfig {
 	public MemberService memberService() {
 		return new MemberService(memberRepository);
 	}
+	
+	
+	/*AOP는 사용한다는 의미로 직접 작성하여 빈 등록하는게 좋긴 함*/
+	/* 
+	 * @Bean public TimeTraceAop timeTraceAop() { return new TimeTraceAop(); }
+	 */
 
 }
